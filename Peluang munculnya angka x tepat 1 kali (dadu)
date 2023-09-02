@@ -1,0 +1,68 @@
+using System;
+
+using System.Linq;
+
+
+
+namespace Hitung_kemungkinan;
+
+
+
+public static class Program
+
+{
+	public static void Main()
+	{
+    int nilai = Convert.ToInt32(Console.ReadLine());
+		int pembilang = 0;
+		int penyebut = 0;
+		int pembagi = 2;
+		int pembanding = 0;
+		int kemungkinan_kejadian = 0;
+		int kemungkinan_total = 0;
+		int kemungkinan_penghambat = 0;
+		string kata = "0";
+		for(int i = 1; i <= 6; i++){	
+		for(int j = 1; j <= 6; j++){	
+		for(int k = 1; k <= 6; k++){	
+		kemungkinan_total += 1;
+		kata = Convert.ToString(i) + 
+		Convert.ToString(j) + 
+		Convert.ToString(k);
+		if(kata.Contains(nilai)){
+		kemungkinan_kejadian += 1;
+		}
+		if(kata.Contains(Convert.ToString(nilai) + Convert.ToString(nilai){
+		kemungkinan_penghambat += 1;
+		}
+		if(i == niai && k == nilai){
+		kemungkinan_penghambat += 1;
+		}
+	}
+	}
+	}
+	kemungkinan_penghambat -= 1;
+	kemungkinan_kejadian -= kemungkinan_penghambat;
+	Console.WriteLine("jadi kemungkinan munculnya angka 3 tepat 1 kali adalah");
+	Console.Write(kemungkinan_kejadian);
+	Console.Write(" / ");
+	Console.WriteLine(kemungkinan_total);
+	pembanding = kemungkinan_total;
+	while(true){	
+		if(kemungkinan_kejadian % pembagi == 0 && kemungkinan_total % pembagi ==0){
+		pembilang = kemungkinan_kejadian / pembagi;
+		penyebut = kemungkinan_total / pembagi;
+		}
+		if(pembagi == pembanding){
+		break;
+		}
+		pembagi += 1;
+	}
+	Console.WriteLine("sederhananya");
+	Console.Write(pembilang);
+	Console.Write(" / ");
+	Console.WriteLine(penyebut);
+	}
+
+}
+
